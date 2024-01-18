@@ -12,6 +12,14 @@ jobs:
     runs-on: windows-latest
 
     steps:
+      - name: checkout repo
+        uses: actions/checkout@v2.3.4
+        
+      - name: Load environment from YAML
+        uses: doughepi/yaml-env-action@v1.0.0
+        with:
+            files: $github_workspace/variables/env.yaml # Pass a space-separated list of configuration files. Rightmost files take precedence.
+    
       - name: Hello
         shell: pwsh
         run: |
