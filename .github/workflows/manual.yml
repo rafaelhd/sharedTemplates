@@ -14,11 +14,14 @@ jobs:
     steps:
       - name: checkout repo
         uses: actions/checkout@v4.1.1
-        
+        with:
+          repository: rafaelhd/varsTest  # Replace with the actual repository name
+          path: varsRepo
+          #token: ${{ secrets.GITHUB_TOKEN }}  # Use the default token
       - name: Load environment from YAML
         uses: doughepi/yaml-env-action@v1.0.0
         with:
-            files: ./variables/vars.yml # Pass a space-separated list of configuration files. Rightmost files take precedence.
+            files: varsRepo/variables/vars.yml # Pass a space-separated list of configuration files. Rightmost files take precedence.
     
       - name: Hello
         shell: pwsh
