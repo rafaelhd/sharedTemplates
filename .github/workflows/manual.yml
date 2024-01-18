@@ -27,4 +27,4 @@ jobs:
           Write-Host "Parameter 2: ${{ github.event.inputs.param2 }}"
           Write-Host "Name: $env:name"
           Write-Host "Last Name: $env:last_name"
-          Write-Host "ID: $env:1029384756"
+          Write-Host "ID: $env:ID"
