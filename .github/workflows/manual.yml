@@ -13,7 +13,7 @@ jobs:
 
     steps:
       - name: checkout repo
-        uses: actions/checkout@latest
+        uses: actions/checkout@v4.1.1
         
       - name: Load environment from YAML
         uses: doughepi/yaml-env-action@v1.0.0
