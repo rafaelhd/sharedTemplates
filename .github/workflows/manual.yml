@@ -1,0 +1,20 @@
+name: My Manual Windows Workflow with Parameters
+
+on: 
+  workflow_dispatch:
+          inputs:
+            param1:
+              description: 'param1'
+            param2:
+              description: 'param2'
+jobs:
+  my-job:
+    runs-on: windows-latest
+
+    steps:
+      - name: Print parameters using PowerShell
+        uses: actions/checkout@v3
+        run: |
+          Write-Host "Parameter 1: ${{ github.event.inputs.param1 }}"
+          Write-Host "Parameter 2: ${{ github.event.inputs.param2 }}"
+          # Further PowerShell actions can be added here
